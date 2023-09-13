@@ -127,6 +127,11 @@ header {
 }
 header a {
   text-decoration: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+header a:hover {
+  text-decoration: underline;
 }
 header .links :nth-child(2) {
   margin: 0 70px 0 70px;
@@ -197,6 +202,39 @@ header button svg {
   padding-bottom: 16px;
 }
 
+.hire {
+  position: relative;
+  z-index: 0;
+  width: 312px;
+  text-decoration: none;
+}
+.theme--dark .hire {
+  border: 5px solid #F0F0F0;
+}
+.theme--light .hire {
+  border: 5px solid #303030;
+}
+.hire ::before {
+  position: absolute;
+  display: block;
+  z-index: -1;
+  content: "";
+  width: 312px;
+  height: 106px;
+  margin: -5px;
+  transition: width 250ms, height 250ms;
+}
+.theme--dark .hire ::before {
+  background-color: #303030;
+}
+.theme--light .hire ::before {
+  background-color: #F0F0F0;
+}
+.hire :hover::before {
+  width: 0;
+  height: 0;
+}
+
 .projects {
   padding-bottom: 124px;
 }
@@ -240,9 +278,18 @@ header button svg {
 }
 .about-skills {
   padding-top: 16px;
+  padding-bottom: 32px;
 }
 .about-skills :nth-child(2) {
   padding: 4px 0 4px 0;
+}
+
+.social {
+  margin: 4px 0 40px 0;
+}
+.social :nth-child(2) {
+  margin-left: 16px;
+  margin-right: 16px;
 }
 
 @media screen and (min-width: 1280px) {

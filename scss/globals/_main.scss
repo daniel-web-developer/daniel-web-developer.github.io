@@ -61,6 +61,12 @@ header{
 
     a{
         text-decoration: none;
+        -webkit-user-select: none;
+        user-select: none;
+
+        &:hover{
+            text-decoration: underline;
+        }
     }
 
     .links{
