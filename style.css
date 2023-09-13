@@ -1,0 +1,284 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;600;700&display=swap");
+body {
+  font-family: "Roboto Mono", monospace;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+h1, h2, h3, h4, h5, h6, p, a {
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+}
+.theme--dark h1, .theme--dark h2, .theme--dark h3, .theme--dark h4, .theme--dark h5, .theme--dark h6, .theme--dark p, .theme--dark a {
+  color: #F0F0F0;
+}
+.theme--light h1, .theme--light h2, .theme--light h3, .theme--light h4, .theme--light h5, .theme--light h6, .theme--light p, .theme--light a {
+  color: #303030;
+}
+
+h1 {
+  font-size: 96px;
+}
+
+h2 {
+  font-size: 72px;
+}
+
+h3 {
+  font-size: 56px;
+}
+
+h4 {
+  font-size: 40px;
+}
+
+h5 {
+  font-size: 32px;
+}
+
+@media screen and (max-width: 1279px) {
+  h1 {
+    font-size: 72px;
+  }
+  h2 {
+    font-size: 56px;
+  }
+  h3 {
+    font-size: 40px;
+  }
+  h4 {
+    font-size: 32px;
+  }
+  h5 {
+    font-size: 28px;
+  }
+}
+@media screen and (max-width: 809px) {
+  h1 {
+    font-size: 56px;
+  }
+  h2 {
+    font-size: 48px;
+  }
+  h3 {
+    font-size: 32px;
+  }
+  h4 {
+    font-size: 24px;
+  }
+  h5 {
+    font-size: 20px;
+  }
+}
+html {
+  box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+.body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  min-width: 100vw;
+}
+.theme--dark .body {
+  background-color: #303030;
+}
+.theme--light .body {
+  background-color: #F0F0F0;
+}
+
+.flex {
+  display: flex;
+}
+.flex-justcont-c {
+  justify-content: center;
+}
+.flex-justcont-sb {
+  justify-content: space-between;
+}
+.flex-alignit-c {
+  align-items: center;
+}
+.flex-dir-col {
+  flex-direction: column;
+}
+.flex-dir-col-rev {
+  flex-direction: column-reverse;
+}
+
+.width {
+  width: 976px;
+}
+
+header {
+  height: 80px;
+}
+header a {
+  text-decoration: none;
+}
+header .links :nth-child(2) {
+  margin: 0 70px 0 70px;
+}
+header button {
+  position: absolute;
+  right: 32px;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+}
+header button svg {
+  align-self: center;
+}
+.theme--dark header button svg {
+  fill: #F0F0F0;
+}
+.theme--light header button svg {
+  fill: #303030;
+}
+
+@media screen and (max-width: 1279px) {
+  .width {
+    width: 720px;
+  }
+}
+@media screen and (min-width: 810px) {
+  .desktop-dn {
+    display: none;
+  }
+}
+@media screen and (max-width: 809px) {
+  .width {
+    width: 560px;
+  }
+  .mobile-dn {
+    display: none;
+  }
+}
+@media screen and (max-width: 639px) {
+  .width {
+    width: 90%;
+  }
+  header .links :nth-child(2) {
+    margin: 0 16px 0 16px;
+  }
+  header button {
+    right: 8px;
+  }
+}
+.hero {
+  padding-top: 164px;
+  padding-bottom: 164px;
+}
+.theme--dark .hero {
+  color: #F0F0F0;
+}
+.theme--light .hero {
+  color: #303030;
+}
+.hero h1 {
+  padding-bottom: 16px;
+}
+.hero h2 {
+  white-space: nowrap;
+}
+.hero h3 {
+  padding-bottom: 16px;
+}
+
+.projects {
+  padding-bottom: 124px;
+}
+.projects-each {
+  margin-top: 40px;
+}
+.projects h5 {
+  padding-bottom: 16px;
+}
+.projects-width {
+  width: 412px;
+}
+.projects-width p {
+  text-align: justify;
+}
+.projects img {
+  object-fit: cover;
+}
+
+.tags {
+  padding-top: 24px;
+  flex-wrap: wrap;
+}
+.tags p {
+  padding: 4px 8px 4px 8px;
+  margin-top: 16px;
+  margin-right: 16px;
+}
+.theme--dark .tags p {
+  border: 1px solid #F0F0F0;
+}
+.theme--light .tags p {
+  border: 1px solid #303030;
+}
+
+.about h4 {
+  padding-bottom: 24px;
+}
+.about p {
+  text-align: justify;
+}
+.about-skills {
+  padding-top: 16px;
+}
+.about-skills :nth-child(2) {
+  padding: 4px 0 4px 0;
+}
+
+@media screen and (min-width: 1280px) {
+  .hero {
+    padding: 256px 0 256px 0;
+  }
+}
+@media screen and (max-width: 1279px) {
+  .projects-width {
+    width: 302px;
+  }
+}
+@media screen and (max-width: 809px) {
+  .projects-width {
+    width: 100%;
+  }
+  .projects img {
+    margin-bottom: 16px;
+  }
+}
+@media screen and (max-width: 639px) {
+  .hero {
+    padding-top: 128px;
+    padding-top: 128px;
+    flex-direction: column;
+  }
+  .hero div {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 32px;
+    align-items: center;
+  }
+  .projects {
+    padding-bottom: 64px;
+    width: 100%;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

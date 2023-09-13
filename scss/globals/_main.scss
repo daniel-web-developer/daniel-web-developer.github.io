@@ -1,41 +1,130 @@
 @use 'typography' as *;
+@use 'themes' as *;
 
 html{
-	box-sizing: border-box;
-	box-sizing: border-box;
+    box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 *, *::before, *::after{
-	box-sizing: inherit;
+    box-sizing: inherit;
 }
 
 body{
-	margin:0;
-	padding: 0;
-	ming-height: 100vh;
-	min-width: 100vw;
+    margin:0;
+    padding: 0;
+
+    scroll-behavior: smooth;
+}
+
+.body{
+    margin:0;
+    padding: 0;
+    min-height: 100vh;
+    min-width: 100vw;
+
+    @include themed(){
+        background-color: t("bg");
+    }
 }
 
 .flex{
-	display: flex;
+    display: flex;
 
-	&-justcont-c{
-		justify-content: center;
-	}
+    &-justcont-c{
+        justify-content: center;
+    }
 
-	&-justcont-sb{
-		justify-content: space-between;
-	}
+    &-justcont-sb{
+        justify-content: space-between;
+    }
 
-	&-alignit-c{
-		align-items: center;
-	}
+    &-alignit-c{
+        align-items: center;
+    }
 
-	&-dir-col{
-		flex-direction: column;
-	}
+    &-dir-col{
+        flex-direction: column;
+    }
 
-	&-dir-col-rev{
-		flex-direction: column-reverse;
-	}
+    &-dir-col-rev{
+        flex-direction: column-reverse;
+    }
 }
+
+.width{
+    width: 976px;
+}
+
+header{
+    height: 80px;
+
+    a{
+        text-decoration: none;
+    }
+
+    .links{
+        :nth-child(2){
+            margin: 0 70px 0 70px;
+        }
+    }
+
+    button{
+        position: absolute;
+        right: 32px;
+
+        cursor: pointer;
+
+        border: none;
+        background: transparent;
+
+        svg{
+            align-self: center;
+
+            @include themed(){
+                fill: t("text");
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1279px){
+    .width{
+        width: 720px;
+    }
+}
+
+@media screen and (min-width: 810px){
+    .desktop-dn{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 809px){
+    .width{
+        width: 560px;
+    }
+
+    .mobile-dn{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 639px){
+    .width{
+        width: 90%;
+    }
+
+    header{
+        .links{
+            :nth-child(2){
+                margin: 0 16px 0 16px;
+            }
+        }
+
+        button{
+            right: 8px;
+        }
+    }
+}
+

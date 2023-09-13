@@ -1,0 +1,88 @@
+@use 'themes' as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;600;700&display=swap');
+
+$font: 'Roboto Mono', monospace;
+
+body{
+    font-family: $font;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+h1, h2, h3, h4, h5, h6, p, a{
+    margin: 0;
+    padding: 0;
+
+    font-weight: 400;
+
+    @include themed(){
+        color: t("text");
+    }
+}
+
+h1{
+    font-size: 96px;
+}
+
+h2{
+    font-size: 72px;
+}
+
+h3{
+    font-size: 56px;
+}
+
+h4{
+    font-size: 40px;
+}
+
+h5{
+    font-size: 32px;
+}
+
+@media screen and (max-width: 1279px){
+    h1{
+        font-size: 72px;
+    }
+
+    h2{
+        font-size: 56px;
+    }
+
+    h3{
+        font-size: 40px;
+    }
+
+    h4{
+        font-size: 32px;
+    }
+
+    h5{
+        font-size: 28px;
+    }
+}
+
+@media screen and (max-width: 809px){
+    h1{
+        font-size: 56px;
+    }
+
+    h2{
+        font-size: 48px;
+    }
+
+    h3{
+        font-size: 32px;
+    }
+
+    h4{
+        font-size: 24px;
+    }
+
+    h5{
+        font-size: 20px;
+    }
+}
+
+
