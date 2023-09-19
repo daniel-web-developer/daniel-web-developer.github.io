@@ -26,8 +26,6 @@
     position: relative;
     z-index: 0;
 
-    width: 312px;
-
     text-decoration: none;
 
     @include themed(){
@@ -129,6 +127,10 @@
 @media screen and (min-width: 1280px){
     .hero{
         padding: 256px 0 256px 0;
+    }
+
+    .hire{
+        width: 312px;
     }
 }
 
