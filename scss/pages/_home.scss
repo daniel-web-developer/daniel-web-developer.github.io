@@ -60,7 +60,20 @@
     padding-bottom: 124px;
 
     &-each{
-        margin-top: 40px;
+        margin-top: 96px;
+        
+        &-first{
+            margin-top: 40px;
+        }
+    }
+
+    &-links{
+        margin-top: auto;
+        padding-top: 32px;
+
+        a{
+            text-decoration: underline;
+        }
     }
 
     h5{
@@ -81,14 +94,12 @@
 }
 
 .tags{
-    padding-top: 24px;
-
     flex-wrap: wrap;
 
     p{
         padding: 4px 8px 4px 8px;
         margin-top: 16px;
-        margin-right: 16px;
+        user-select: none;
 
         @include themed(){
             border: 1px solid t("text");
@@ -148,8 +159,12 @@
             width: 100%;
         }
 
+        &-each{
+            margin-top: 56px;
+        }
+
         img{
-            margin-bottom: 16px;
+            margin-top: 16px;
         }
     }
 }

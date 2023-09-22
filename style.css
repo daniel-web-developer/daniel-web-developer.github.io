@@ -238,7 +238,17 @@ header button svg {
   padding-bottom: 124px;
 }
 .projects-each {
+  margin-top: 96px;
+}
+.projects-each-first {
   margin-top: 40px;
+}
+.projects-links {
+  margin-top: auto;
+  padding-top: 32px;
+}
+.projects-links a {
+  text-decoration: underline;
 }
 .projects h5 {
   padding-bottom: 16px;
@@ -254,13 +264,12 @@ header button svg {
 }
 
 .tags {
-  padding-top: 24px;
   flex-wrap: wrap;
 }
 .tags p {
   padding: 4px 8px 4px 8px;
   margin-top: 16px;
-  margin-right: 16px;
+  user-select: none;
 }
 .theme--dark .tags p {
   border: 1px solid #F0F0F0;
@@ -308,8 +317,11 @@ header button svg {
   .projects-width {
     width: 100%;
   }
+  .projects-each {
+    margin-top: 56px;
+  }
   .projects img {
-    margin-bottom: 16px;
+    margin-top: 16px;
   }
 }
 @media screen and (max-width: 639px) {
