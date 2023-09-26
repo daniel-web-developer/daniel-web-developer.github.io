@@ -48,8 +48,8 @@
         @include themed(){
             background-color: t("bg");
         }
-
     }
+
     :hover::before{
         width: 0;
         height: 0;
@@ -135,6 +135,16 @@
     }
 }
 
+.carousel{
+    overflow: scroll;
+    scroll-snap-type: x mandatory;
+
+    img{
+        margin: 0 24px 0 24px;
+        scroll-snap-align: center;
+    }
+}
+
 @media screen and (min-width: 1280px){
     .hero{
         padding: 256px 0 256px 0;
@@ -151,12 +161,18 @@
             width: 302px;
         }
     }
+
+    .hire{
+        ::before{
+            width: 245.2px;
+        }
+    }
 }
 
 @media screen and (max-width: 809px){
     .projects{
         &-width{
-            width: 100%;
+            width: 560px;
         }
 
         &-each{
@@ -166,6 +182,10 @@
         img{
             margin-top: 16px;
         }
+    }
+
+    .hire{
+        width: 211.6px;
     }
 }
 
@@ -184,10 +204,18 @@
         }
     }
 
+    .hire{
+        ::before{
+            width: fit-content;
+        }
+    }
+
     .projects{
         padding-bottom: 64px;
 
-        width: 100%;
+        &-width{
+            width: 90vw;
+        }
     }
 }
 

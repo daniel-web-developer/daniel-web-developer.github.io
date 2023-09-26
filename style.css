@@ -173,7 +173,7 @@ header button svg {
 }
 @media screen and (max-width: 639px) {
   .width {
-    width: 90%;
+    width: 90vw;
   }
   header .links :nth-child(2) {
     margin: 0 16px 0 16px;
@@ -300,6 +300,15 @@ header button svg {
   margin-right: 16px;
 }
 
+.carousel {
+  overflow: scroll;
+  scroll-snap-type: x mandatory;
+}
+.carousel img {
+  margin: 0 24px 0 24px;
+  scroll-snap-align: center;
+}
+
 @media screen and (min-width: 1280px) {
   .hero {
     padding: 256px 0 256px 0;
@@ -312,16 +321,22 @@ header button svg {
   .projects-width {
     width: 302px;
   }
+  .hire ::before {
+    width: 245.2px;
+  }
 }
 @media screen and (max-width: 809px) {
   .projects-width {
-    width: 100%;
+    width: 560px;
   }
   .projects-each {
     margin-top: 56px;
   }
   .projects img {
     margin-top: 16px;
+  }
+  .hire {
+    width: 211.6px;
   }
 }
 @media screen and (max-width: 639px) {
@@ -336,9 +351,14 @@ header button svg {
     padding-bottom: 32px;
     align-items: center;
   }
+  .hire ::before {
+    width: fit-content;
+  }
   .projects {
     padding-bottom: 64px;
-    width: 100%;
+  }
+  .projects-width {
+    width: 90vw;
   }
 }
 
