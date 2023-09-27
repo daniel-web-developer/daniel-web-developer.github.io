@@ -2,6 +2,8 @@ const preferredTheme = window.matchMedia("(prefers-color-scheme: dark)");
 const body = document.querySelector("#body");
 const button = document.querySelector("#theme");
 const carouselAll = document.querySelectorAll(".carousel");
+const previousAll = document.querySelectorAll(".slides-buttons-prev");
+const nextAll = document.querySelectorAll(".slides-buttons-next");
 
 let isClicking = false;
 let initialX;
@@ -32,12 +34,14 @@ function changeTheme(){
 }
 
 carouselAll.forEach((carousel) => {
+
+    const desktopWidth = document.querySelector(".carousel-desktop").offsetWidth;
+    const mobileWidth = document.querySelector(".carousel-mobile").offsetWidth;
+
     carousel.addEventListener("mousedown", (e) => {
         isClicking = true;
         scrollLeft = carousel.scrollLeft;
         initialX = e.clientX;
-
-        console.log(initialX);
 
         carousel.style.cursor = "grabbing";
         document.body.style.userSelect = "none";
@@ -64,9 +68,33 @@ carouselAll.forEach((carousel) => {
 
         let x = e.clientX - initialX;
 
-        console.log(scrollLeft - x);
-
         carousel.scrollLeft = scrollLeft - x;
+    });
+
+    previousAll.forEach((previous) => {
+        if ('ontouchstart' in window){
+            previous.addEventListener("touchstart", () => {
+                carousel.scrollLeft -= mobileWidth;
+            });
+        } else{
+            previous.addEventListener("click", () => {
+                carousel.scrollLeft -= desktopWidth;
+            });
+        }
+
+    });
+
+    nextAll.forEach((next) => {
+        if ('ontouchstart' in window){
+            next.addEventListener("touchstart", () => {
+                carousel.scrollLeft += mobileWidth;
+            });
+        } else {
+            next.addEventListener("click", () => {
+                carousel.scrollLeft += desktopWidth;
+            });
+        }
+
     });
 });
 

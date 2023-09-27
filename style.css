@@ -307,10 +307,27 @@ header button svg {
   cursor: grab;
 }
 
+.slides-buttons {
+  font-size: 24px;
+  position: sticky;
+  top: calc(50% - 25px);
+  min-width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  backdrop-filter: blur(10px);
+  z-index: 1;
+  cursor: pointer;
+}
+.slides-buttons-prev {
+  left: 5px;
+}
+.slides-buttons-next {
+  left: calc(100% - 45px);
+}
 .slides img {
   cursor: pointer;
   pointer-events: none;
-  margin: 0 24px 0 24px;
+  gap: 24px;
   scroll-snap-align: center;
 }
 
