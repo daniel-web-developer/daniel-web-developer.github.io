@@ -137,9 +137,16 @@
 
 .carousel{
     overflow: scroll;
+    scrollbar-width: none;
     scroll-snap-type: x mandatory;
+    cursor: grab;
+}
+
+.slides{
 
     img{
+        cursor: pointer;
+        pointer-events: none;
         margin: 0 24px 0 24px;
         scroll-snap-align: center;
     }

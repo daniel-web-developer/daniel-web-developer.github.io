@@ -1,6 +1,11 @@
 const preferredTheme = window.matchMedia("(prefers-color-scheme: dark)");
 const body = document.querySelector("#body");
 const button = document.querySelector("#theme");
+const carouselAll = document.querySelectorAll(".carousel");
+
+let isClicking = false;
+let initialX;
+let scrollLeft;
 
 if (!localStorage.getItem("theme")){
     setTheme(preferredTheme ? "dark" : "light");
@@ -25,4 +30,43 @@ function changeTheme(){
         localStorage.setItem("theme", "dark");
     }
 }
+
+carouselAll.forEach((carousel) => {
+    carousel.addEventListener("mousedown", (e) => {
+        isClicking = true;
+        scrollLeft = carousel.scrollLeft;
+        initialX = e.clientX;
+
+        console.log(initialX);
+
+        carousel.style.cursor = "grabbing";
+        document.body.style.userSelect = "none";
+    });
+
+    carousel.addEventListener("mouseup", () => {
+        isClicking = false;
+
+        carousel.style.cursor = "grab";
+        document.body.style.userSelect = "auto";
+    });
+
+    carousel.addEventListener("mouseout", () => {
+        isClicking = false;
+
+        carousel.style.cursor = "grab";
+        document.body.style.userSelect = "auto";
+    });
+
+    carousel.addEventListener("mousemove", (e) => {
+        if (isClicking == false){
+            return;
+        }
+
+        let x = e.clientX - initialX;
+
+        console.log(scrollLeft - x);
+
+        carousel.scrollLeft = scrollLeft - x;
+    });
+});
 
