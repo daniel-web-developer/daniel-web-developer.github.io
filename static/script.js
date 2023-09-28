@@ -9,6 +9,10 @@ let isClicking = false;
 let initialX;
 let scrollLeft;
 
+document.querySelectorAll('img').forEach((image) => {
+    image.setAttribute("draggable", "false");
+})
+
 if (!localStorage.getItem("theme")){
     setTheme(preferredTheme ? "dark" : "light");
 } else {
@@ -66,6 +70,7 @@ carouselAll.forEach((carousel) => {
             return;
         }
 
+
         let x = e.clientX - initialX;
 
         carousel.scrollLeft = scrollLeft - x;
@@ -97,4 +102,13 @@ carouselAll.forEach((carousel) => {
 
     });
 });
+
+document.querySelectorAll(".slide").forEach((item) => {
+    item.addEventListener("click", (e) => {
+        const href = item.getAttribute("src");
+        const newImg = document.createElement("img");
+        newImg.setAttribute("src", href);
+        // document.body.insertBefore(newImg, e.target);
+    })
+})
 

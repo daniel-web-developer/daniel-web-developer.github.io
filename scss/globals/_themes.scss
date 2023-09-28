@@ -2,10 +2,12 @@ $themes:(
     "dark":(
         bg: #303030,
         text: #F0F0F0,
+        blend-mode: difference
     ),
     "light":(
         bg: #F0F0F0,
         text: #303030,
+        blend-mode: hard-light,
     ),
 );
 

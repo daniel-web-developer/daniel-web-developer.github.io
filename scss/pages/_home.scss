@@ -156,6 +156,10 @@
         z-index: 1;
         cursor: pointer;
 
+        @include themed(){
+            mix-blend-mode: t("blend-mode");
+        }
+
         &-prev{
             left: 5px;
         }
@@ -167,8 +171,6 @@
 
     img{
         cursor: pointer;
-        pointer-events: none;
-        gap: 24px;
         scroll-snap-align: center;
     }
 }

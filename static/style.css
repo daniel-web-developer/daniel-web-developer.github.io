@@ -319,6 +319,12 @@ header button svg {
   z-index: 1;
   cursor: pointer;
 }
+.theme--dark .slides-buttons {
+  mix-blend-mode: difference;
+}
+.theme--light .slides-buttons {
+  mix-blend-mode: hard-light;
+}
 .slides-buttons-prev {
   left: 5px;
 }
@@ -327,8 +333,6 @@ header button svg {
 }
 .slides img {
   cursor: pointer;
-  pointer-events: none;
-  gap: 24px;
   scroll-snap-align: center;
 }
 
