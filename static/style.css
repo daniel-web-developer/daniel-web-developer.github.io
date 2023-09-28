@@ -260,7 +260,7 @@ header button svg {
   text-align: justify;
 }
 .projects img {
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .tags {
@@ -305,6 +305,7 @@ header button svg {
   scrollbar-width: none;
   scroll-snap-type: x mandatory;
   cursor: grab;
+  height: 500px;
 }
 
 .slides-buttons {

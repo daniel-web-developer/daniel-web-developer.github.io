@@ -89,7 +89,7 @@
     }
 
     img{
-        object-fit: cover;
+        object-fit: contain;
     }
 }
 
@@ -140,6 +140,8 @@
     scrollbar-width: none;
     scroll-snap-type: x mandatory;
     cursor: grab;
+
+    height: 500px;
 }
 
 .slides{
