@@ -4,6 +4,7 @@ const button = document.querySelector("#theme");
 const carouselAll = document.querySelectorAll(".carousel");
 const previousAll = document.querySelectorAll(".slides-buttons-prev");
 const nextAll = document.querySelectorAll(".slides-buttons-next");
+const detail = document.querySelector(".detail");
 
 let isClicking = false;
 let initialX;
@@ -105,10 +106,19 @@ carouselAll.forEach((carousel) => {
 
 document.querySelectorAll(".slide").forEach((item) => {
     item.addEventListener("click", (e) => {
-        const href = item.getAttribute("src");
-        const newImg = document.createElement("img");
-        newImg.setAttribute("src", href);
-        // document.body.insertBefore(newImg, e.target);
-    })
-})
+        const imageDetail = document.querySelector(".detail-image");
+
+        const src = e.target.getAttribute("src");
+        const alt = e.target.getAttribute("alt");
+
+        imageDetail.setAttribute("src", src);
+        imageDetail.setAttribute("alt", alt);
+        
+        detail.classList.add("detail-display");
+    });
+});
+
+document.querySelector(".detail-button").addEventListener("click", () => {
+    detail.classList.remove("detail-display");
+});
 

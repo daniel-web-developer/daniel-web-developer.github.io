@@ -336,6 +336,60 @@ header button svg {
   scroll-snap-align: center;
 }
 
+.detail {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  margin: 0 16px 0 16px;
+  top: 0;
+  left: 0;
+  min-width: 100vw;
+  min-height: 100%;
+  backdrop-filter: blur(5px);
+}
+.detail-image {
+  max-height: 90vh;
+}
+.detail-button {
+  width: 40px;
+  height: 40px;
+  align-self: start;
+  margin-top: 5vh;
+  margin-left: 4px;
+  border-radius: 100%;
+  cursor: pointer;
+}
+.theme--dark .detail-button {
+  background-color: #303030;
+}
+.theme--light .detail-button {
+  background-color: #F0F0F0;
+}
+.detail-button :first-child {
+  position: relative;
+  left: 25%;
+  transform: rotate(45deg);
+}
+.detail-button :last-child {
+  position: relative;
+  left: -25%;
+  transform: rotate(-45deg);
+}
+.detail-button span {
+  display: block;
+  width: 20px;
+  height: 2px;
+}
+.theme--dark .detail-button span {
+  background-color: #F0F0F0;
+}
+.theme--light .detail-button span {
+  background-color: #303030;
+}
+.detail-display {
+  display: flex;
+}
+
 @media screen and (min-width: 1280px) {
   .hero {
     padding: 256px 0 256px 0;
@@ -350,6 +404,10 @@ header button svg {
   }
   .hire ::before {
     width: 245.2px;
+  }
+  .detail-button {
+    width: 30px;
+    height: 30px;
   }
 }
 @media screen and (max-width: 809px) {
@@ -378,6 +436,9 @@ header button svg {
     padding-bottom: 32px;
     align-items: center;
   }
+  .hero h4 {
+    text-align: center;
+  }
   .hire ::before {
     width: fit-content;
   }
@@ -386,6 +447,14 @@ header button svg {
   }
   .projects-width {
     width: 90vw;
+  }
+  .detail {
+    margin: 0 4px 0 4px;
+  }
+  .detail-button {
+    width: 20px;
+    height: 20px;
+    margin-top: 7vh;
   }
 }
 
