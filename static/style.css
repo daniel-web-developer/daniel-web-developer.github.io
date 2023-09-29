@@ -295,9 +295,8 @@ header button svg {
 .social {
   margin: 4px 0 40px 0;
 }
-.social :nth-child(2) {
-  margin-left: 16px;
-  margin-right: 16px;
+.social a {
+  margin-bottom: 8px;
 }
 
 .carousel {
