@@ -332,7 +332,7 @@ header button svg {
   left: calc(100% - 45px);
 }
 .slides img {
-  cursor: pointer;
+  cursor: grab;
   scroll-snap-align: center;
 }
 

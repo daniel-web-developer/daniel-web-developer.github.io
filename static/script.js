@@ -5,6 +5,7 @@ const carouselAll = document.querySelectorAll(".carousel");
 const previousAll = document.querySelectorAll(".slides-buttons-prev");
 const nextAll = document.querySelectorAll(".slides-buttons-next");
 const detail = document.querySelector(".detail");
+const slides = document.querySelectorAll(".slide");
 
 let isClicking = false;
 let initialX;
@@ -48,21 +49,30 @@ carouselAll.forEach((carousel) => {
         scrollLeft = carousel.scrollLeft;
         initialX = e.clientX;
 
-        carousel.style.cursor = "grabbing";
+        slides.forEach((slide) => {
+            slide.style.cursor = "grabbing";
+        });
+
         document.body.style.userSelect = "none";
     });
 
     carousel.addEventListener("mouseup", () => {
         isClicking = false;
 
-        carousel.style.cursor = "grab";
+        slides.forEach((slide) => {
+            slide.style.cursor = "grab";
+        });
+        
         document.body.style.userSelect = "auto";
     });
 
     carousel.addEventListener("mouseout", () => {
         isClicking = false;
 
-        carousel.style.cursor = "grab";
+        slides.forEach((slide) => {
+            slide.style.cursor = "grab";
+        });
+
         document.body.style.userSelect = "auto";
     });
 
@@ -70,7 +80,6 @@ carouselAll.forEach((carousel) => {
         if (isClicking == false){
             return;
         }
-
 
         let x = e.clientX - initialX;
 
@@ -104,7 +113,7 @@ carouselAll.forEach((carousel) => {
     });
 });
 
-document.querySelectorAll(".slide").forEach((item) => {
+slides.forEach((item) => {
     item.addEventListener("click", (e) => {
         const imageDetail = document.querySelector(".detail-image");
 
