@@ -6,6 +6,8 @@ const previousAll = document.querySelectorAll(".slides-buttons-prev");
 const nextAll = document.querySelectorAll(".slides-buttons-next");
 const detail = document.querySelector(".detail");
 const slides = document.querySelectorAll(".slide");
+    const desktopWidth = document.querySelector(".carousel-desktop").offsetWidth;
+    const mobileWidth = document.querySelector(".carousel-mobile").offsetWidth;
 
 let isClicking = false;
 let initialX;
@@ -40,9 +42,6 @@ function changeTheme(){
 }
 
 carouselAll.forEach((carousel) => {
-
-    const desktopWidth = document.querySelector(".carousel-desktop").offsetWidth;
-    const mobileWidth = document.querySelector(".carousel-mobile").offsetWidth;
 
     carousel.addEventListener("mousedown", (e) => {
         isClicking = true;
@@ -85,32 +84,30 @@ carouselAll.forEach((carousel) => {
 
         carousel.scrollLeft = scrollLeft - x;
     });
+});
 
-    previousAll.forEach((previous) => {
-        if ('ontouchstart' in window){
-            previous.addEventListener("touchstart", () => {
-                carousel.scrollLeft -= mobileWidth;
-            });
-        } else{
-            previous.addEventListener("click", () => {
-                carousel.scrollLeft -= desktopWidth;
-            });
-        }
+previousAll.forEach((previous) => {
+    if ('ontouchstart' in window){
+        previous.addEventListener("touchstart", () => {
+            previous.closest(".carousel").scrollLeft -= desktopWidth;
+        });
+    } else{
+        previous.addEventListener("click", () => {
+            previous.closest(".carousel").scrollLeft -= desktopWidth;
+        });
+    }
+});
 
-    });
-
-    nextAll.forEach((next) => {
-        if ('ontouchstart' in window){
-            next.addEventListener("touchstart", () => {
-                carousel.scrollLeft += mobileWidth;
-            });
-        } else {
-            next.addEventListener("click", () => {
-                carousel.scrollLeft += desktopWidth;
-            });
-        }
-
-    });
+nextAll.forEach((next) => {
+    if ('ontouchstart' in window){
+        next.addEventListener("touchstart", () => {
+            next.closest(".carousel").scrollLeft += desktopWidth;
+        });
+    } else {
+        next.addEventListener("click", () => {
+            next.closest(".carousel").scrollLeft += desktopWidth;
+        });
+    }
 });
 
 slides.forEach((item) => {
