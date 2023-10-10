@@ -1,12 +1,17 @@
 @use 'themes' as *;
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;600;700&display=swap');
+@font-face {
+    font-family: 'Roboto Mono';
+    src: url('https://fonts.gstatic.com/s/robotomono/v23/L0xTDF4xlVMF-BfR8bXMIhJHg45mwgGEFl0_3vrtSM1J-gEPT5Ese6hmHSh0mQ.woff2') format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
 
 $font: 'Roboto Mono', monospace;
 
 body{
     font-family: $font;
-    font-weight: 400;
     font-size: 16px;
 }
 
