@@ -88,7 +88,7 @@ carouselAll.forEach((carousel) => {
 
 previousAll.forEach((previous) => {
     if ('ontouchstart' in window){
-        previous.addEventListener("touchstart", () => {
+        previous.addEventListener("touchstart", {passive: true}, () => {
             previous.closest(".carousel").scrollLeft -= desktopWidth;
         });
     } else{
@@ -100,7 +100,7 @@ previousAll.forEach((previous) => {
 
 nextAll.forEach((next) => {
     if ('ontouchstart' in window){
-        next.addEventListener("touchstart", () => {
+        next.addEventListener("touchstart", {passive: true}, () => {
             next.closest(".carousel").scrollLeft += desktopWidth;
         });
     } else {
