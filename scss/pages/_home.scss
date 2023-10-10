@@ -130,6 +130,7 @@
     margin: 4px 0 40px 0;
 
     a{
+        width: fit-content;
         margin-bottom: 8px;
     }
 }
@@ -324,6 +325,12 @@
             width: 20px;
             height: 20px;
             margin-top: 7vh;
+        }
+    }
+
+    .social {
+        a {
+            padding: 12px 0;
         }
     }
 }
