@@ -138,6 +138,7 @@
 .carousel{
     overflow: scroll;
     scrollbar-width: none;
+    scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
     cursor: grab;
 
